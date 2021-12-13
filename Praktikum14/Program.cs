@@ -10,37 +10,19 @@ namespace Praktikum14
     {
         public static void notprime()
         {
-            Console.SetCursorPosition(4, 2);
-            Console.Write("1");
-            Console.SetCursorPosition(9, 2);
-            Console.Write("4");
-            Console.SetCursorPosition(14, 2);
-            Console.Write("6");
-            Console.SetCursorPosition(19, 2);
-            Console.Write("8");
-            Console.SetCursorPosition(24, 2);
-            Console.Write("9");
-            Console.SetCursorPosition(29, 2);
-            Console.Write("10");
-            Console.SetCursorPosition(34, 2);
-            Console.Write("12");
+            Console.WriteLine("1\t4\t6\t8");
+            Console.WriteLine("9\t10\t12\t14");
+            Console.WriteLine("15\t16\t18\t20");
+            Console.WriteLine("21\t22\t24\t25");
+            Console.WriteLine("26\t27\t28\t30");
         }
-        public static void prime()
+        public static void isprime()
         {
-            Console.SetCursorPosition(4, 2);
-            Console.Write("2");
-            Console.SetCursorPosition(9, 2);
-            Console.Write("3");
-            Console.SetCursorPosition(14, 2);
-            Console.Write("5");
-            Console.SetCursorPosition(19, 2);
-            Console.Write("7");
-            Console.SetCursorPosition(24, 2);
-            Console.Write("11");
-            Console.SetCursorPosition(29, 2);
-            Console.Write("13");
-            Console.SetCursorPosition(34, 2);
-            Console.Write("17");
+            Console.WriteLine("2\t3\t5\t7");
+            Console.WriteLine("11\t13\t17\t19");
+            Console.WriteLine("23\t29\t31\t37");
+            Console.WriteLine("41\t43\t47\t53");
+            Console.WriteLine("59\t61\t67\t71");
         }
         static void Main(string[] args)
         {
@@ -53,21 +35,16 @@ namespace Praktikum14
             {
                 int angka = N % i;
                 if (angka == 0)
-                {
                     bil = bil + 1;
-                }
-                else
-                {
-                    bil = bil;
-                }
+                else bil = bil;
             }
-            if (bil > 2 || bil == 1)
+            if (N == 1)
             {
                 notprime();
             }
             else
             {
-                prime();
+                isprime();
             }
             Console.ReadKey();
         }
