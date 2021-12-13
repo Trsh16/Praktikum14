@@ -14,15 +14,13 @@ namespace Praktikum14
             Console.WriteLine("9\t10\t12\t14");
             Console.WriteLine("15\t16\t18\t20");
             Console.WriteLine("21\t22\t24\t25");
-            Console.WriteLine("26\t27\t28\t30");
         }
         public static void isprime()
         {
-            Console.WriteLine("2\t3\t5\t7");
-            Console.WriteLine("11\t13\t17\t19");
-            Console.WriteLine("23\t29\t31\t37");
-            Console.WriteLine("41\t43\t47\t53");
-            Console.WriteLine("59\t61\t67\t71");
+            Console.WriteLine("2\t3\t5");
+            Console.WriteLine("7\t11\t13");
+            Console.WriteLine("17\t19\t23");
+            Console.WriteLine("29\t31\t37");
         }
         static void Main(string[] args)
         {
@@ -38,7 +36,7 @@ namespace Praktikum14
                     bil = bil + 1;
                 else bil = bil;
             }
-            if (N == 1)
+            if (bil > 2 || N == 1)
             {
                 notprime();
             }
