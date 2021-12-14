@@ -8,28 +8,29 @@ namespace Praktikum14
 {
     class Program
     {
-        public static void notprime(int bil)
+        public static void notprime(int N)
         {
-            int counter = 0;
+            int v = 0;
             int angka = 0;
             int ifprime = 0;
-            for (int i = 0; i < bil; i++)
+            for (int i = 0; i < N; i++)
             {
-                for (int j = 0; j < bil; j++)
+                for (int j = 0; j < N; j++)
                 {
                     ifprime = 0;
                     while (ifprime == 0)
                     {
                         angka++;
-                        counter = 0;
+                        v = 0;
                         for (int k = 1; k <= angka; k++)
                         {
-                            if (angka % k == 0)
+                            int l = angka % k;
+                            if (l == 0)
                             {
-                                counter++;
+                                v++;
                             }
                         }
-                        if (counter == 2)
+                        if (v == 2)
                             ifprime = 0;
                         else
                             ifprime = 1;
@@ -39,28 +40,29 @@ namespace Praktikum14
                 Console.WriteLine();
             }
         }
-        public static void isprime(int bil)
+        public static void isprime(int N)
         {
-            int counter = 0;
+            int v = 0;
             int angka = 0;
             int ifprime = 0;
-            for (int i = 0; i < bil; i++)
+            for (int i = 0; i < N; i++)
             {
-                for (int j = 0; j < bil; j++)
+                for (int j = 0; j < N; j++)
                 {
                     ifprime = 0;
                     while (ifprime == 0)
                     {
                         angka++;
-                        counter = 0;
+                        v = 0;
                         for (int k = 1; k <= angka; k++)
                         {
-                            if (angka % k == 0)
+                            int l = angka % k;
+                            if (l == 0)
                             {
-                                counter++;
+                                v++;
                             }
                         }
-                        if (counter == 2)
+                        if (v == 2)
                             ifprime = 1;
                         else
                             ifprime = 0;
@@ -73,27 +75,28 @@ namespace Praktikum14
         static void Main(string[] args)
         {
             Console.Write("Input : ");
-            int bil = Convert.ToInt32(Console.ReadLine());
-            if (bil < 2)
+            int N = Convert.ToInt32(Console.ReadLine());
+            if (N < 2)
                 Console.WriteLine("Inputan minimal adalah 2");    
             else
             {
                 Console.WriteLine("Output : ");
-                int counter = 0;
-                for (int i = 1; i <= bil; i++)
+                int v = 0;
+                for (int i = 1; i <= N; i++)
                 {
-                    if (bil % i == 0)
+                    int Bil = N % i;
+                    if (Bil == 0)
                     {
-                        counter++;
+                        v++;
                     }
                 }
-                if (counter == 2)
+                if (v == 2)
                 {
-                    isprime(bil);
+                    isprime(N);
                 }
                 else
                 {
-                    notprime(bil);
+                    notprime(N);
                 }
             }
             Console.ReadKey();
