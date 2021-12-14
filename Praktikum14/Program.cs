@@ -8,41 +8,88 @@ namespace Praktikum14
 {
     class Program
     {
-        public static void notprime()
+        public static void notprime(int bil)
         {
-            Console.WriteLine("1\t4\t6\t8");
-            Console.WriteLine("9\t10\t12\t14");
-            Console.WriteLine("15\t16\t18\t20");
-            Console.WriteLine("21\t22\t24\t25");
+            int counter = 0;
+            int angka = 0;
+            int ifprime = 0;
+            for (int i = 0; i < bil; i++)
+            {
+                for(int j = 0; j < bil; j++)
+                {
+                    ifprime = 0;
+                    while (ifprime == 0)
+                    {
+                        angka++;
+                        counter = 0;
+                        for (int k = 1; k <= angka; k++)
+                        {
+                            if (angka % k == 0)
+                            {
+                                counter++;
+                            }
+                        }
+                        if (counter == 2)
+                            ifprime = 0;
+                        else
+                            ifprime = 1;
+                    }
+                    Console.Write($"{angka} ".PadLeft(5));
+                }
+                Console.WriteLine();
+            }
         }
-        public static void isprime()
+        public static void isprime(int bil)
         {
-            Console.WriteLine("2\t3\t5");
-            Console.WriteLine("7\t11\t13");
-            Console.WriteLine("17\t19\t23");
-            Console.WriteLine("29\t31\t37");
+            int counter = 0;
+            int angka = 0;
+            int ifprime = 0;
+            for (int i = 0; i < bil; i++)
+            {
+                for (int j = 0; j < bil; j++)
+                {
+                    ifprime = 0;
+                    while (ifprime == 0)
+                    {
+                        angka++;
+                        counter = 0;
+                        for (int k = 1; k <= angka; k++)
+                        {
+                            if (angka % k == 0)
+                            {
+                                counter++;
+                            }
+                        }
+                        if (counter == 2)
+                            ifprime = 1;
+                        else
+                            ifprime = 0;
+                    }
+                    Console.Write($"{angka} ".PadLeft(5));
+                }
+                Console.WriteLine();
+            }
         }
         static void Main(string[] args)
         {
             Console.Write("Input : ");
-            int N = Convert.ToInt32(Console.ReadLine());
-            string hasil;
-            int bil = 0;
+            int bil = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Output : ");
-            for (int i = 1; i <= N; i++)
+            int counter = 0;
+            for (int i = 1; i <= bil; i++)
             {
-                int angka = N % i;
-                if (angka == 0)
-                    bil = bil + 1;
-                else bil = bil;
+                if (bil % i == 0)
+                {
+                    counter++;
+                }
             }
-            if (bil > 2 || N == 1)
+            if (counter == 2)
             {
-                notprime();
+                notprime(bil);
             }
             else
             {
-                isprime();
+                isprime(bil);
             }
             Console.ReadKey();
         }
