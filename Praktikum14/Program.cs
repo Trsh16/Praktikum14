@@ -34,7 +34,7 @@ namespace Praktikum14
                         else
                             ifprime = 1;
                     }
-                    Console.Write($"{angka} ".PadLeft(5));
+                    Console.Write($"{angka} ".PadLeft(7));
                 }
                 Console.WriteLine();
             }
@@ -65,7 +65,7 @@ namespace Praktikum14
                         else
                             ifprime = 0;
                     }
-                    Console.Write($"{angka} ".PadLeft(5));
+                    Console.Write($"{angka} ".PadLeft(7));
                 }
                 Console.WriteLine();
             }
@@ -85,11 +85,11 @@ namespace Praktikum14
             }
             if (counter == 2)
             {
-                notprime(bil);
+                isprime(bil);
             }
             else
             {
-                isprime(bil);
+                notprime(bil);
             }
             Console.ReadKey();
         }
